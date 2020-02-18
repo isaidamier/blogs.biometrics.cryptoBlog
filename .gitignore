@@ -1,0 +1,124 @@
+isaid-macbookpro:ClassyTaxi isaid$ cd android/
+isaid-macbookpro:android isaid$ ls
+ClassyTaxi
+isaid-macbookpro:android isaid$ cd ClassyTaxi/
+isaid-macbookpro:ClassyTaxi isaid$ ls
+app				gradlew
+build.gradle			gradlew.bat
+example-keystore.properties	playstore
+gradle				settings.gradle
+gradle.properties
+isaid-macbookpro:ClassyTaxi isaid$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+isaid-macbookpro:ClassyTaxi isaid$ ls -la
+total 64
+drwxr-xr-x  12 isaid  eng   384 Nov  4 11:38 .
+drwxr-xr-x   3 isaid  eng    96 Nov  4 11:38 ..
+-rw-r--r--   1 isaid  eng   561 Nov  4 11:38 .gitignore
+drwxr-xr-x   6 isaid  eng   192 Nov  4 11:38 app
+-rw-r--r--   1 isaid  eng  3573 Nov  4 11:38 build.gradle
+-rw-r--r--   1 isaid  eng  1393 Nov  4 11:38 example-keystore.properties
+drwxr-xr-x   3 isaid  eng    96 Nov  4 11:38 gradle
+-rw-r--r--   1 isaid  eng  3323 Nov  4 11:38 gradle.properties
+-rwxr-xr-x   1 isaid  eng  4971 Nov  4 11:38 gradlew
+-rw-r--r--   1 isaid  eng  2404 Nov  4 11:38 gradlew.bat
+drwxr-xr-x  11 isaid  eng   352 Nov  4 11:38 playstore
+-rw-r--r--   1 isaid  eng   632 Nov  4 11:38 settings.gradle
+isaid-macbookpro:ClassyTaxi isaid$ pwd
+/Users/isaid/android_dpe/play-billing-samples/ClassyTaxi/android/ClassyTaxi
+isaid-macbookpro:ClassyTaxi isaid$ vi .gitignore 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+
+# Windows thumbnail db
+.DS_Store
+
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle
+*.iml
+.idea/
+
+# Gradle cache
+.gradle
+
+# Sandbox stuff
+_sandbox
+
+# Android Studio captures folder
+captures/
+
+".gitignore" 47L, 561C
+
