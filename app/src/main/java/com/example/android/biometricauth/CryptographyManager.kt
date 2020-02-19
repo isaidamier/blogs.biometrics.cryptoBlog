@@ -59,7 +59,7 @@ interface CryptographyManager {
     /**
      * The Cipher created with [getInitializedCipherForEncryption] is used here
      */
-    fun encryptData(plaintext: String, cipher: Cipher): ByteArray
+    fun encryptData(plaintext: String, cipher: Cipher): EncryptedData
 
     /**
      * The Cipher created with [getInitializedCipherForDecryption] is used here
@@ -69,6 +69,8 @@ interface CryptographyManager {
 }
 
 fun CryptographyManager(): CryptographyManager = CryptographyManagerImpl()
+
+data class EncryptedData(val ciphertext: ByteArray, val initializationVector: ByteArray)
 
 private class CryptographyManagerImpl : CryptographyManager {
 
@@ -92,8 +94,9 @@ private class CryptographyManagerImpl : CryptographyManager {
         return cipher
     }
 
-    override fun encryptData(plaintext: String, cipher: Cipher): ByteArray {
-        return cipher.doFinal(plaintext.toByteArray(Charset.forName("UTF-8")))
+    override fun encryptData(plaintext: String, cipher: Cipher): EncryptedData {
+        val ciphertext = cipher.doFinal(plaintext.toByteArray(Charset.forName("UTF-8")))
+        return EncryptedData(ciphertext,cipher.iv)
     }
 
     override fun decryptData(ciphertext: ByteArray, cipher: Cipher): String {

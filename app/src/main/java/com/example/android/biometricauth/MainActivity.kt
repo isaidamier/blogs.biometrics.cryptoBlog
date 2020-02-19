@@ -109,7 +109,6 @@ class MainActivity : AppCompatActivity() {
         if (BiometricManager.from(applicationContext).canAuthenticate() == BiometricManager
                         .BIOMETRIC_SUCCESS) {
             val cipher = cryptographyManager.getInitializedCipherForEncryption(secretKeyName)
-            initializationVector = cipher.iv
             biometricPrompt.authenticate(promptInfo, BiometricPrompt.CryptoObject(cipher))
         }
     }
@@ -127,7 +126,10 @@ class MainActivity : AppCompatActivity() {
     private fun processData(cryptoObject: BiometricPrompt.CryptoObject?) {
         val data = if (readyToEncrypt) {
             val text = textInputView.text.toString()
-            ciphertext = cryptographyManager.encryptData(text, cryptoObject?.cipher!!)
+            val encryptedData = cryptographyManager.encryptData(text, cryptoObject?.cipher!!)
+            ciphertext = encryptedData.ciphertext
+            initializationVector = encryptedData.initializationVector
+
             String(ciphertext, Charset.forName("UTF-8"))
         } else {
             cryptographyManager.decryptData(ciphertext, cryptoObject?.cipher!!)
