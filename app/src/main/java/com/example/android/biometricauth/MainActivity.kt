@@ -27,16 +27,6 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import java.nio.charset.Charset
 
-/**
- * Main entry point for the sample, showing a backpack and "Purchase" button.
- * 1. App has an EditView for user to enter text to be encrypted; a button to encrypt; a button
- * to decrypt; and a TextView to view encrypted/decrypted text.
- *
- * 2. When user opens app the EditText is non-empty but the TextView is empty
- * 3. User clicks encrypt/decrypt to make text appear on TextView.
- * 4. Option to login with password still exists
- *
- */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textInputView: AppCompatEditText
